@@ -33,23 +33,6 @@ app = FastAPI(
 )
 
 
-@app.get("/")
-async def root():
-
-    return {
-        "status": "ok",
-        "service": "fitness-mcp-agent",
-    }
-
-
-@app.get("/health")
-async def health():
-
-    return {
-        "status": "healthy"
-    }
-
-
 @app.post(
     "/generate",
     response_model=AgentResponse,
