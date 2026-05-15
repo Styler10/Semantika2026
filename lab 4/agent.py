@@ -55,16 +55,11 @@ class AgentManager:
 
     async def get_agent(self):
 
-        if self._agent is not None:
-            return self._agent
-
         async with self._lock:
 
-            if self._agent is None:
-
-                self._agent = (
-                    await self.build_agent()
-                )
+            self._agent = (
+                await self.build_agent()
+            )
 
         return self._agent
 
