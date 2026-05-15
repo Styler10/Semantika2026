@@ -42,10 +42,6 @@ class AgentManager:
 
         tools = await client.get_tools()
 
-        if not tools:
-            raise RuntimeError(
-                "MCP tools not loaded"
-            )
 
         model = llm.bind_tools(tools)
 
